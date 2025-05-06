@@ -85,10 +85,6 @@ with st.sidebar:
             st.query_params.clear()
             st.rerun()
 
-# ========================================
-# 🔗 Integrating Your Provided Dashboard Code Below
-# ========================================
-
 if st.session_state.authenticated:
     with st.sidebar:
 
@@ -336,53 +332,7 @@ if st.session_state.authenticated:
                         r2 = '99.98%%'
                         st.info(f"Model R² Accuracy: {r2}")
                         st.success(f"Predicted Retail Price: {prediction:.4f}")
-
-        # totalsale_model = xgb.XGBRegressor()
-        # totalsale_model.load_model("xgbregressor_total_model.json")
-        #
-        # with tab2:
-        #     st.subheader("Total Order")
-        #     with st.form("form2"):
-        #         # Row 1
-        #         col1, col2, col3 = st.columns(3)
-        #         with col1:
-        #             cost_price2 = st.number_input("Enter Cost Price")
-        #         with col2:
-        #             retail_price2 = st.number_input("Enter Retail Price")
-        #         with col3:
-        #             profit2 = st.number_input("Enter Profit per quantity")
-        #
-        #         # Row 2
-        #         col4, col5, col6 = st.columns(3)
-        #         with col4:
-        #             order_quantity2 = st.number_input("Enter Order Quantity")
-        #         with col5:
-        #             discount2 = st.number_input("Enter Discount%")
-        #         with col6:
-        #             shipping_cost2 = st.number_input("Enter Shipping Cost")
-        #
-        #         col7,_,_=st.columns(3)
-        #         order_total2_calc = (retail_price2 * order_quantity2) * (1 - discount2 / 100) + shipping_cost2
-        #
-        #         # 💬 Display the result
-        #         with col7:
-        #             st.metric("🧾 Order Total (Auto)", f"${order_total2_calc:.2f}")
-        #         btn2 = st.form_submit_button("Total Cost Prediction")
-        #
-        #     if btn2:
-        #         input_data = np.array(
-        #             [[cost_price2, retail_price2, profit2, order_quantity2, discount2, shipping_cost2,order_total2_calc]])
-        #         if np.all(input_data == 0):
-        #             st.warning("⚠️ Please enter values first.")
-        #         else:
-        #             prediction = totalsale_model.predict(input_data)[0]
-        #             r2 = '91.25%'
-        #             st.info(f"Model R² Accuracy: {r2}")
-        #
-        # profit_model = xgb.XGBRegressor()
-        # profit_model.load_model("xgbregressor_profit_model.json")
-        #
-
+                        
         with tab3:
             st.subheader("📊 Interactive Insights")
             # 🔮 Future Forecast based on 7-day SMA
